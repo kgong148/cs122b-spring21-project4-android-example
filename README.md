@@ -15,3 +15,7 @@ This Android app depends on [cs122b-spring21-project2-login-cart-example](https:
 Follow the instructions on [Canvas](https://canvas.eee.uci.edu/courses/36596/pages/p4-task-2-developing-an-android-app-for-fabflix) to set up the Android App Project
 
 Note: Don't forget to change the URL in Login class to match your deployed backend
+
+## About NukeSSLCerts.java
+
+When you access a website through https, the server will send a SSL certificate to the browser for it to verify. We are using self-signed certificates, which will not be trusted by Android applications by default. The application will throw exceptions once it receives such certificate. NukeSSLCerts.java allows us to bypass SSL by accepting all certificates. If you want to learn more about this, see [this blog](https://www.codeproject.com/Articles/826045/Android-security-Implementation-of-Self-signed-SSL)
