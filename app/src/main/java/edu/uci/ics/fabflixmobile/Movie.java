@@ -1,8 +1,8 @@
 package edu.uci.ics.fabflixmobile;
 
 public class Movie {
-    private String name;
-    private short year;
+    private final String name;
+    private final short year;
 
     public Movie(String name, short year) {
         this.name = name;

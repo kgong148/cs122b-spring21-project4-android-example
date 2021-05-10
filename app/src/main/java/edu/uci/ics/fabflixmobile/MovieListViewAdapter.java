@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MovieListViewAdapter extends ArrayAdapter<Movie> {
-    private ArrayList<Movie> movies;
+    private final ArrayList<Movie> movies;
 
     public MovieListViewAdapter(ArrayList<Movie> movies, Context context) {
         super(context, R.layout.row, movies);
@@ -30,7 +30,8 @@ public class MovieListViewAdapter extends ArrayAdapter<Movie> {
         TextView subtitleView = view.findViewById(R.id.subtitle);
 
         titleView.setText(movie.getName());
-        subtitleView.setText(movie.getYear() + "");// need to cast the year to a string to set the label
+        // need to cast the year to a string to set the label
+        subtitleView.setText(movie.getYear() + "");
 
         return view;
     }

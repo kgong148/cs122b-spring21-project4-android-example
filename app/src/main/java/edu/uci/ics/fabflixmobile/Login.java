@@ -1,17 +1,16 @@
 package edu.uci.ics.fabflixmobile;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
@@ -34,19 +33,14 @@ public class Login extends ActionBarActivity {
         password = findViewById(R.id.password);
         message = findViewById(R.id.message);
         loginButton = findViewById(R.id.login);
-        /**
-         * In Android, localhost is the address of the device or the emulator.
-         * To connect to your machine, you need to use the below IP address
-         * **/
-        url = "http://10.0.2.2:8080/cs122b_spring21_project2_login_cart_example_war/api/";
+        /*
+          In Android, localhost is the address of the device or the emulator.
+          To connect to your machine, you need to use the below IP address
+          **/
+        url = "http://10.0.2.2:8080/cs122b-spring21-project2-login-cart-example/api/";
 
         //assign a listener to call a function to handle the user request when clicking a button
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
+        loginButton.setOnClickListener(view -> login());
     }
 
     public void login() {
@@ -66,12 +60,9 @@ public class Login extends ActionBarActivity {
                 startActivity(listPage);
             }
         },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // error
-                        Log.d("login.error", error.toString());
-                    }
+                error -> {
+                    // error
+                    Log.d("login.error", error.toString());
                 }) {
             @Override
             protected Map<String, String> getParams() {
@@ -84,7 +75,7 @@ public class Login extends ActionBarActivity {
             }
         };
 
-        // !important: queue.add is where the login request is actually sent
+        // important: queue.add is where the login request is actually sent
         queue.add(loginRequest);
 
     }
