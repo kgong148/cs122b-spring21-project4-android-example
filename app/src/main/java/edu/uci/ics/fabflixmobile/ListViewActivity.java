@@ -12,7 +12,7 @@ public class ListViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
-        // important: this should be retrieved from the backend server
+        // TODO: this should be retrieved from the backend server
         final ArrayList<Movie> movies = new ArrayList<>();
         movies.add(new Movie("The Terminal", (short) 2004));
         movies.add(new Movie("The Final Season", (short) 2007));
