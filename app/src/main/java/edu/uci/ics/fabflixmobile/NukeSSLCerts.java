@@ -32,12 +32,7 @@ class NukeSSLCerts {
             SSLContext sc = SSLContext.getInstance("SSL");
             sc.init(null, trustAllCerts, new SecureRandom());
             HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-            HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
-                @Override
-                public boolean verify(String arg0, SSLSession arg1) {
-                    return true;
-                }
-            });
+            HttpsURLConnection.setDefaultHostnameVerifier((arg0, arg1) -> true);
         } catch (Exception ignored) {
         }
     }

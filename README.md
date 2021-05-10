@@ -3,7 +3,7 @@
 This is an example Android project to demonstrate how to:
 
 - Change between Android Activities
-- Make RESTful HTTPS requests
+- Make RESTFul HTTPS requests
 - Maintain cookies
 - Use ListView with custom row layout
 - HTTP is supported by checking /app/src/main/AndroidManifest.xml
